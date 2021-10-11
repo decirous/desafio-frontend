@@ -19,11 +19,11 @@ export class ClienteService {
         return this.http.get(`${this.uri}/clientes/${id}`);
     }
 
-    excluirCliente(id: Number) {
+    excluirCliente(id: String) {
         return this.http.delete(`${this.uri}/clientes/${id}`);
     } 
 
-    alterarCliente(id: Number, nome: String, email: String) {
+    alterarCliente(id: String, nome: String, email: String) {
         const input = { nome: nome, email: email };
         return this.http.put(`${this.uri}/clientes/${id}`, input);
     }

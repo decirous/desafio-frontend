@@ -1,5 +1,5 @@
 export default class Cliente {
-    id: Number;
+    id: String;
     nome: String;
     email: String;
     cpfCNPJ: String;

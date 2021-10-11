@@ -23,14 +23,14 @@ export class DetalharComponent implements OnInit {
       .subscribe((data: Cliente) => {
         this.cliente = data;
       });
-      
+       
     } else {
       console.log('Erro ao carregar Cliente para detalhamento');
       this.router.navigate(["/clientes"]);
     }
   }
 
-  alterarCliente(id: Number): void {
+  alterarCliente(id: String): void {
     this.router.navigate([`/alterar`, id]);
   }
 

@@ -26,15 +26,15 @@ export class ListarComponent implements OnInit {
     });
   }
   
-  alterarCliente(id: Number): void {
+  alterarCliente(id: String): void {
     this.router.navigate([`/alterar`, id]);
   }
 
-  excluirCliente(id: Number): void {
+  excluirCliente(id: String): void {
     this.clienteService.excluirCliente(id).subscribe(data => {this.listarClientes();});
   }
 
-  detalhaCliente(id: Number): void {
+  detalhaCliente(id: String): void {
     this.router.navigate([`/detalhar`, id]);
   }
 
