@@ -1,0 +1,19 @@
+  <div>
+    <b>Nome do Cliente:</b>{{cliente.nome}}
+  </div>
+  <div>
+    <b>Email:</b>{{cliente.email}}
+  </div>
+  <div>
+    <b>CPF:</b>{{cliente.cpfCNPJ}}
+  </div>
+  <div style="padding-top: 20px;">
+    <button (click)="alterarCliente(cliente.id)" class="btn btn-primary">
+        Editar Cliente
+     </button>
+     <button (click)="voltar()"
+      class="btn btn-default">
+      Voltar
+   </button>
+  </div>
+  

@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-body">
+        <h4>Incluir Cliente</h4>
+      <form [formGroup]="incluirClienteForm">
+        <div class="col-md-6 col-md-offset-3">
+  
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" formControlName="nome" (keyup)="cacheForm('nome', nome.value)"  #nome>
+          </div>
+          <div *ngIf="incluirClienteForm.controls['nome'].invalid
+                && (incluirClienteForm.controls['nome'].dirty
+                || incluirClienteForm.controls['nome'].touched)"
+                class="alert alert-danger">
+            <div *ngIf="incluirClienteForm.controls['nome'].errors?.required">
+              O campo 'Nome' é obrigatório.
+            </div>
+          </div>
+  
+          <div class="form-group" style="padding-top: 20px;">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlName="email" (keyup)="cacheForm('email', email.value)" #email>
+          </div>
+          <div *ngIf="incluirClienteForm.controls['email'].invalid
+                && (incluirClienteForm.controls['email'].dirty
+                || incluirClienteForm.controls['email'].touched)"
+                class="alert alert-danger">
+            <div *ngIf="incluirClienteForm.controls['email'].errors?.required">
+              O campo 'Email' é obrigatório.
+            </div>
+          </div>
+
+          <div class="form-group" style="padding-top: 20px;">
+            <label>CPF</label>
+            <input type="text" class="form-control" formControlName="cpfCNPJ" (keyup)="cacheForm('cpfCNPJ', cpfCNPJ.value)" #cpfCNPJ>
+          </div>
+          <div *ngIf="incluirClienteForm.controls['cpfCNPJ'].invalid
+                && (incluirClienteForm.controls['cpfCNPJ'].dirty
+                || incluirClienteForm.controls['cpfCNPJ'].touched)"
+                class="alert alert-danger">
+            <div *ngIf="incluirClienteForm.controls['cpfCNPJ'].errors?.required">
+              O campo 'CPF' é obrigatório.
+            </div>
+          </div>
+  
+          <div class="form-group" style="padding-top: 50px;">
+            <button (click)="incluirCliente(nome.value, email.value, cpfCNPJ.value)"
+              class="btn btn-primary"
+              [disabled]="incluirClienteForm.pristine || incluirClienteForm.invalid">
+               Incluir
+            </button>
+            <button (click)="voltar()"
+              class="btn btn-default">
+               Voltar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

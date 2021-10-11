@@ -20,7 +20,9 @@
     "@angular/router": "~12.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "bootstrap": "^4.2.1",
+    "ng2-slim-loading-bar": "^4.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.9",

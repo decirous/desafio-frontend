@@ -1,0 +1,39 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <td><b>Nome do Cliente</b></td>
+        <td align="center"><b>email</b></td>
+        <td align="center"><b>CPF</b></td>
+        <td align="center" colspan="3"><b>Ações</b></td>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td align="left">{{ cliente.nome }}</td>
+        <td align="left">{{ cliente.email }}</td>
+        <td align="left">{{ cliente.cpfCNPJ }}</td>
+        <td align="center">
+            <button (click)="alterarCliente(cliente.id)" class="btn btn-primary">
+                Alterar
+            </button>
+        </td>
+        <td align="center">
+          <button (click)="excluirCliente(cliente.id)" class="btn btn-danger">
+             Excluir
+          </button>
+        </td>
+        <td align="center">
+            <button (click)="detalhaCliente(cliente.id)" class="btn btn-danger">
+               Detalhar
+            </button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="padding-top: 20px;">
+    <button (click)="incluirCliente()" class="btn btn-primary">
+        Novo Cliente
+     </button>
+  </div>
+  
